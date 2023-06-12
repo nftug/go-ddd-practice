@@ -1,8 +1,6 @@
 package entity
 
-import (
-	"domain/vo"
-)
+import "domain/vo"
 
 type User struct {
 	ID vo.Id
