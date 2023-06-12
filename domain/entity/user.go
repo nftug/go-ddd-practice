@@ -9,19 +9,11 @@ type User struct {
 }
 
 func CreateUser(firstName string, lastName string, email string) (*User, error) {
-	u, err := NewUser(0, firstName, lastName, email)
-	if err != nil {
-		return nil, err
-	}
-	return u, nil
+	return NewUser(0, firstName, lastName, email)
 }
 
 func (u *User) Edit(firstName string, lastName string, email string) (*User, error) {
-	u, err := NewUser(u.ID.Get(), firstName, lastName, email)
-	if err != nil {
-		return nil, err
-	}
-	return u, nil
+	return NewUser(u.ID.Get(), firstName, lastName, email)
 }
 
 func NewUser(id int, firstName string, lastName string, email string) (*User, error) {
@@ -33,10 +25,10 @@ func NewUser(id int, firstName string, lastName string, email string) (*User, er
 	if err != nil {
 		return nil, err
 	}
-	addr, err := vo.NewEmail(email)
+	_email, err := vo.NewEmail(email)
 	if err != nil {
 		return nil, err
 	}
 
-	return &User{ID: *_id, FullName: *fullName, Email: *addr}, nil
+	return &User{ID: *_id, FullName: *fullName, Email: *_email}, nil
 }
