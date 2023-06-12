@@ -3,17 +3,17 @@ package vo
 import "fmt"
 
 type Id struct {
-	value uint
+	value int
 }
 
 func NewId(v int) (*Id, error) {
-	if v <= 0 {
+	if v < 0 {
 		return nil, fmt.Errorf("Id is invalid")
 	}
-	return &Id{value: uint(v)}, nil
+	return &Id{value: v}, nil
 }
 
-func (id *Id) Get() uint {
+func (id *Id) Get() int {
 	return id.value
 }
 

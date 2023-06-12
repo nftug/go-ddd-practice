@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	u, err := entity.NewUser("Jane", "Doe", "test@example.com")
+	u, err := entity.CreateUser("Jane", "Doe", "test@example.com")
 	if err != nil {
 		log.Fatal(err)
 	}
