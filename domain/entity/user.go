@@ -3,9 +3,9 @@ package entity
 import "domain/vo"
 
 type User struct {
-	ID vo.Id
-	vo.FullName
-	vo.Email
+	Id       vo.Id
+	FullName vo.FullName
+	Email    vo.Email
 }
 
 func CreateUser(firstName string, lastName string, email string) (*User, error) {
@@ -13,7 +13,7 @@ func CreateUser(firstName string, lastName string, email string) (*User, error) 
 }
 
 func (u *User) Edit(firstName string, lastName string, email string) (*User, error) {
-	return NewUser(u.ID.Get(), firstName, lastName, email)
+	return NewUser(u.Id.Get(), firstName, lastName, email)
 }
 
 func NewUser(id int, firstName string, lastName string, email string) (*User, error) {
@@ -30,5 +30,5 @@ func NewUser(id int, firstName string, lastName string, email string) (*User, er
 		return nil, err
 	}
 
-	return &User{ID: *_id, FullName: *fullName, Email: *_email}, nil
+	return &User{Id: *_id, FullName: *fullName, Email: *_email}, nil
 }
