@@ -1,6 +1,6 @@
 package dto
 
-import "domain/entity"
+import "go-ddd-practice/domain/entity"
 
 type UserDto struct {
 	Id    int    `json:"id"`

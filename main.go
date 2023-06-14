@@ -1,11 +1,10 @@
 package main
 
 import (
-	"domain/dto"
-	"domain/entity"
 	"encoding/json"
-
 	"fmt"
+	"go-ddd-practice/domain/dto"
+	"go-ddd-practice/domain/entity"
 	"log"
 )
 

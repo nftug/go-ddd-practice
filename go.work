@@ -3,8 +3,4 @@ go 1.20
 use (
 	.
 	./domain
-	./domain/dto
-	./domain/entity
-	./domain/repository
-	./domain/vo
 )

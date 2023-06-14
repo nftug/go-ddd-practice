@@ -1,6 +1,6 @@
 package repository
 
-import "domain/vo"
+import "go-ddd-practice/domain/vo"
 
 type Repository[T any] interface {
 	GetById(id *vo.Id) (*T, error)

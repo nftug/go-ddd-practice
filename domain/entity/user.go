@@ -1,6 +1,6 @@
 package entity
 
-import "domain/vo"
+import "go-ddd-practice/domain/vo"
 
 type User struct {
 	Id       vo.Id
